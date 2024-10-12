@@ -1,0 +1,25 @@
+# Ignore CSV files
+*.csv
+
+# Ignore session files
+*.session
+
+# Ignore database files
+*.db
+
+# Ignore log files
+*.log
+
+# Ignore weights files
+*.weights
+
+# Ignore image files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.svg
+*.tiff
+*.webp
+*.venv/
