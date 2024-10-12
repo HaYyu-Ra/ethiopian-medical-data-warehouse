@@ -1,0 +1,17 @@
+steps:
+- name: Checkout code
+  uses: actions/checkout@v2
+
+- name: Set up Python
+  uses: actions/setup-python@v2
+  with:
+    python-version: '3.12'  # or the version you are using
+
+- name: Install dependencies
+  run: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt  # Assumes you have a requirements.txt
+
+- name: Run tests
+  run: |
+    pytest  # Adjust this if you're using a different testing framework
