@@ -1,0 +1,16 @@
+# dbt_project.yml
+
+name: 'my_project'
+version: '1.0'
+config-version: 2
+
+profile: 'my_profile'  # Make sure this corresponds to your profiles.yml
+
+model-paths: ["models"]
+
+models:
+  my_project:
+    cleaned_telegram_data_model:
+      materialized: view  # or 'table'
+    raw_telegram_data_model:
+      materialized: view  # or 'table'
