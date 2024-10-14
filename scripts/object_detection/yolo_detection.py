@@ -1,106 +1,195 @@
+import torch
 import cv2
-import os
 import numpy as np
+import os
 import logging
+import psycopg2
+from psycopg2 import sql
 
 # Set up logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO, 
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("yolo_detection.log"),  # Log to a file
+        logging.StreamHandler()  # Log to console
+    ]
+)
 
-# Define paths to YOLO config and weights
-weights_path = "C:\\Users\\hayyu.ragea\\AppData\\Local\\Programs\\Python\\Python312\\Ethiopian_Medical_Data\\scripts\\object_detection\\yolov3.weights"
-config_path = "C:\\Users\\hayyu.ragea\\AppData\\Local\\Programs\\Python\\Python312\\Ethiopian_Medical_Data\\scripts\\object_detection\\yolov3.cfg"
+class YOLOModel:
+    def __init__(self, weights_path, labels_path):
+        # Verify file paths
+        if not os.path.isfile(weights_path):
+            logging.error(f"File not found: {weights_path}")
+            raise FileNotFoundError(f"File not found: {weights_path}")
 
-# Load YOLO
-try:
-    # Check if the weight and config files exist
-    if not os.path.isfile(weights_path):
-        logging.error(f"Weights file not found: {weights_path}")
-        raise FileNotFoundError(weights_path)
+        # Load YOLOv5 model
+        logging.info("Loading YOLO model...")
+        try:
+            self.model = torch.hub.load('ultralytics/yolov5', 'custom', path=weights_path)
+            logging.info("YOLO model loaded successfully.")
+        except Exception as e:
+            logging.error(f"Failed to load YOLO model: {e}")
+            raise
 
-    if not os.path.isfile(config_path):
-        logging.error(f"Config file not found: {config_path}")
-        raise FileNotFoundError(config_path)
+        # Load COCO labels
+        if not os.path.isfile(labels_path):
+            logging.error(f"Labels file not found: {labels_path}")
+            raise FileNotFoundError(f"Labels file not found: {labels_path}")
 
-    # Load YOLO model
-    net = cv2.dnn.readNet(weights_path, config_path)
-    layer_names = net.getLayerNames()
-    output_layers_indices = net.getUnconnectedOutLayers()  # This returns indices directly.
-    output_layers = [layer_names[i - 1] for i in output_layers_indices]  # Adjust for 1-based indexing
-    logging.info("YOLO model loaded successfully.")
+        with open(labels_path, "r") as f:
+            self.classes = [line.strip() for line in f.readlines()]
+        logging.info(f"Loaded {len(self.classes)} classes.")
 
-except Exception as e:
-    logging.error(f"Error loading YOLO model: {e}")
-    raise
+    def detect_objects(self, image, confidence_threshold=0.25):
+        """Perform object detection on the image."""
+        logging.info("Performing object detection...")
+        results = self.model(image)  # Run inference
+        detections = []
 
-def detect_objects(image_path):
-    try:
-        # Read the image
-        img = cv2.imread(image_path)
-        if img is None:
-            logging.error(f"Image not found at path: {image_path}")
-            return [], None  # Always return a tuple
+        # Parse results
+        for *xyxy, conf, cls in results.xyxy[0]:
+            if conf < confidence_threshold:  # Filter based on confidence
+                continue
+            
+            x1, y1, x2, y2 = map(int, xyxy)  # Get bounding box coordinates
+            class_id = int(cls)  # Use class_id instead of label
+            confidence = float(conf)
 
-        height, width, channels = img.shape
-        blob = cv2.dnn.blobFromImage(img, 0.00392, (416, 416), (0, 0, 0), True, crop=False)
-        net.setInput(blob)
-        outs = net.forward(output_layers)
+            detections.append({
+                'class_id': class_id,
+                'confidence': confidence,
+                'box': [x1, y1, x2 - x1, y2 - y1]  # box format: [x, y, width, height]
+            })
 
-        # Processing the outputs (for example, bounding boxes)
-        boxes = []
-        for out in outs:
-            for detection in out:
-                scores = detection[5:]
-                class_id = np.argmax(scores)
-                confidence = scores[class_id]
-                if confidence > 0.5:  # Confidence threshold
-                    center_x = int(detection[0] * width)
-                    center_y = int(detection[1] * height)
-                    w = int(detection[2] * width)
-                    h = int(detection[3] * height)
-                    boxes.append([center_x, center_y, w, h])
-        
-        logging.info(f"Detected boxes: {boxes}")
-        return boxes, img  # Always return boxes and img
-
-    except Exception as e:
-        logging.error(f"Error in object detection: {e}")
-        return [], None  # Return empty list and None for img
-
-def save_detected_image(original_image, boxes, output_path):
-    # Draw bounding boxes on the image
-    for box in boxes:
-        x, y, w, h = box
-        cv2.rectangle(original_image, (x - w // 2, y - h // 2), (x + w // 2, y + h // 2), (0, 255, 0), 2)
-
-    # Save the image with detected boxes
-    cv2.imwrite(output_path, original_image)
-    logging.info(f"Saved detected image to: {output_path}")
-
-# Define the directory containing images
-image_directory = r'C:\Users\hayyu.ragea\AppData\Local\Programs\Python\Python312\Ethiopian_Medical_Data\data\raw\telegram_data'
-
-# Define the directory to save detected images
-output_directory = r'C:\Users\hayyu.ragea\AppData\Local\Programs\Python\Python312\Ethiopian_Medical_Data\data\detected_images'
-
-# Create output directory if it doesn't exist
-os.makedirs(output_directory, exist_ok=True)
-
-# Process all images in the specified directory
-for filename in os.listdir(image_directory):
-    if filename.endswith(('.jpg', '.jpeg', '.png')):  # Add other formats as needed
-        image_path = os.path.join(image_directory, filename)
-        
-        # Check if the image file exists before processing
-        if not os.path.isfile(image_path):
-            logging.error(f"Image not found at path: {image_path}")
-            continue
-        
-        detected_boxes, original_image = detect_objects(image_path)
-
-        if detected_boxes and original_image is not None:
-            logging.info(f"Detected boxes for {filename}: {detected_boxes}")
-            # Save the image with detected boxes
-            output_path = os.path.join(output_directory, filename)  # Save with the same name
-            save_detected_image(original_image, detected_boxes, output_path)
+        if not detections:
+            logging.warning("No valid detections found.")
         else:
-            logging.info(f"No boxes detected for {filename} or image could not be read.")
+            logging.info(f"Detections found: {len(detections)}")
+        
+        return detections
+
+    def draw_boxes(self, image, detections):
+        """Draw detection boxes on the image."""
+        for detection in detections:
+            x, y, w, h = detection['box']
+            class_id = detection['class_id']
+            confidence = detection['confidence']
+            label = self.classes[class_id]  # Get the label using class_id
+            
+            # Draw the bounding box
+            cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            text = f"{label}: {confidence:.2f}"
+            
+            # Put label text
+            cv2.putText(image, text, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+
+def insert_detections_to_db(detections, filename):
+    """Insert detection results into the PostgreSQL database."""
+    connection = None
+    cursor = None
+    try:
+        # Connect to the PostgreSQL database
+        connection = psycopg2.connect(
+            dbname="Object_detection",
+            user="postgres",
+            password="admin",
+            host="localhost",
+            port="5432"
+        )
+        cursor = connection.cursor()
+
+        # Insert detection data into the Image_detection table
+        insert_query = sql.SQL("INSERT INTO Image_detection (filename, class_id, confidence, x_min, y_min, width, height) VALUES (%s, %s, %s, %s, %s, %s, %s)")
+        
+        for detection in detections:
+            cursor.execute(insert_query, (
+                filename,
+                detection['class_id'],  # Use class_id directly
+                detection['confidence'],
+                detection['box'][0],  # x_min
+                detection['box'][1],  # y_min
+                detection['box'][2],  # width
+                detection['box'][3]   # height
+            ))
+
+        # Commit changes
+        connection.commit()
+        logging.info("Detections inserted into the Image_detection table successfully.")
+        
+    except Exception as e:
+        logging.error(f"Database error: {e}")
+        
+    finally:
+        if cursor:
+            cursor.close()
+        if connection:
+            connection.close()
+            logging.info("Database connection closed.")
+
+def process_images(input_folder, output_folder, yolo, summary_txt_path):
+    """Process all images in the input folder and save the detections in the output folder."""
+    # Check if input folder exists, create if not
+    os.makedirs(input_folder, exist_ok=True)
+
+    # Check if output folder exists, create if not
+    os.makedirs(output_folder, exist_ok=True)
+
+    # Create a summary text file for all detections
+    with open(summary_txt_path, 'w') as summary_file:
+        # Iterate over each image in the input folder
+        for filename in os.listdir(input_folder):
+            if filename.lower().endswith(('.jpg', '.jpeg', '.png', '.bmp')):
+                image_path = os.path.join(input_folder, filename)
+                logging.info(f"Processing image: {image_path}")
+
+                # Load image
+                image = cv2.imread(image_path)
+                if image is None:
+                    logging.warning(f"Could not read image: {image_path}. Skipping.")
+                    continue
+
+                # Perform object detection
+                detections = yolo.detect_objects(image)
+
+                # Draw boxes on the image
+                yolo.draw_boxes(image, detections)
+
+                # Save the output image
+                output_path = os.path.join(output_folder, filename)
+                cv2.imwrite(output_path, image)
+                logging.info(f"Detected image saved to: {output_path}")
+
+                # Save labeled names to the summary text file
+                if detections:
+                    for detection in detections:
+                        class_id = detection['class_id']
+                        confidence = detection['confidence']
+                        box = detection['box']
+                        label = yolo.classes[class_id]  # Get label from class_id
+                        summary_file.write(f"{filename}: {label} {confidence:.2f} {box[0]} {box[1]} {box[2]} {box[3]}\n")
+                else:
+                    # If no detections, record that no objects were found
+                    summary_file.write(f"{filename}: No detections found\n")
+                    logging.info(f"No detections for {filename}.")
+
+                logging.info(f"Detection results for {filename} saved to the summary file.")
+                
+                # Insert detections into the database
+                insert_detections_to_db(detections, filename)
+
+if __name__ == "__main__":
+    # Replace these with the correct file paths
+    weights_path = "C:/Users/hayyu.ragea/AppData/Local/Programs/Python/Python312/Ethiopian_Medical_Data/yolov5/yolov5s.pt"
+    labels_path = "C:/Users/hayyu.ragea/AppData/Local/Programs/Python/Python312/Ethiopian_Medical_Data/yolov5/coco.names"
+    input_folder = "C:/Users/hayyu.ragea/AppData/Local/Programs/Python/Python312/Ethiopian_Medical_Data/data/telegram_data"  # Updated path
+    output_folder = "C:/Users/hayyu.ragea/AppData/Local/Programs/Python/Python312/Ethiopian_Medical_Data/output_images"
+    summary_txt_path = "C:/Users/hayyu.ragea/AppData/Local/Programs/Python/Python312/Ethiopian_Medical_Data/detection_summary.txt"
+
+    # Initialize YOLO model
+    try:
+        yolo_model = YOLOModel(weights_path, labels_path)
+        # Process the images
+        process_images(input_folder, output_folder, yolo_model, summary_txt_path)
+    except Exception as e:
+        logging.error(f"An error occurred during processing: {e}")
