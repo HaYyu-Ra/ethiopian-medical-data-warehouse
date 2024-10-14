@@ -1,0 +1,231 @@
+lobelia4cosmetics_12325.jpg: No detections found
+lobelia4cosmetics_12326.jpg: cup 0.39 358 760 290 314
+lobelia4cosmetics_12327.jpg: book 0.65 252 916 525 103
+lobelia4cosmetics_12327.jpg: book 0.43 255 745 518 177
+lobelia4cosmetics_12327.jpg: person 0.31 591 476 174 458
+lobelia4cosmetics_12328.jpg: bottle 0.37 320 256 315 933
+lobelia4cosmetics_12329.jpg: No detections found
+lobelia4cosmetics_12330.jpg: bottle 0.47 626 265 319 936
+lobelia4cosmetics_12331.jpg: person 0.86 434 420 319 475
+lobelia4cosmetics_12332.jpg: clock 0.65 294 178 589 583
+lobelia4cosmetics_12333.jpg: No detections found
+lobelia4cosmetics_12334.jpg: No detections found
+lobelia4cosmetics_12335.jpg: person 0.85 388 565 413 507
+lobelia4cosmetics_12336.jpg: No detections found
+lobelia4cosmetics_12338.jpg: No detections found
+lobelia4cosmetics_12339.jpg: bowl 0.67 237 583 497 382
+lobelia4cosmetics_12340.jpg: vase 0.25 170 42 162 450
+lobelia4cosmetics_12341.jpg: No detections found
+lobelia4cosmetics_12342.jpg: No detections found
+lobelia4cosmetics_12343.jpg: No detections found
+lobelia4cosmetics_12344.jpg: No detections found
+lobelia4cosmetics_12345.jpg: No detections found
+lobelia4cosmetics_12346.jpg: No detections found
+lobelia4cosmetics_12347.jpg: No detections found
+lobelia4cosmetics_12348.jpg: No detections found
+lobelia4cosmetics_12349.jpg: No detections found
+lobelia4cosmetics_12350.jpg: No detections found
+lobelia4cosmetics_12351.jpg: No detections found
+lobelia4cosmetics_12352.jpg: No detections found
+lobelia4cosmetics_12354.jpg: No detections found
+lobelia4cosmetics_12355.jpg: No detections found
+lobelia4cosmetics_12356.jpg: No detections found
+lobelia4cosmetics_12357.jpg: No detections found
+lobelia4cosmetics_12358.jpg: No detections found
+lobelia4cosmetics_12359.jpg: No detections found
+lobelia4cosmetics_12360.jpg: No detections found
+lobelia4cosmetics_12361.jpg: bottle 0.55 161 0 189 483
+lobelia4cosmetics_12362.jpg: vase 0.28 572 177 502 615
+lobelia4cosmetics_12363.jpg: No detections found
+lobelia4cosmetics_12364.jpg: bottle 0.57 235 132 39 131
+lobelia4cosmetics_12364.jpg: bottle 0.56 103 85 116 198
+lobelia4cosmetics_12364.jpg: bottle 0.52 262 143 37 114
+lobelia4cosmetics_12364.jpg: toilet 0.49 25 148 33 108
+lobelia4cosmetics_12364.jpg: bottle 0.47 207 119 42 153
+lobelia4cosmetics_12364.jpg: bottle 0.39 281 150 27 104
+lobelia4cosmetics_12364.jpg: suitcase 0.31 73 109 34 159
+lobelia4cosmetics_12364.jpg: toilet 0.28 14 156 21 96
+lobelia4cosmetics_12365.jpg: No detections found
+lobelia4cosmetics_12366.jpg: No detections found
+lobelia4cosmetics_12367.jpg: No detections found
+lobelia4cosmetics_12368.jpg: No detections found
+lobelia4cosmetics_12369.jpg: No detections found
+lobelia4cosmetics_12370.jpg: No detections found
+lobelia4cosmetics_12371.jpg: cup 0.39 358 760 290 314
+lobelia4cosmetics_12372.jpg: book 0.65 252 916 525 103
+lobelia4cosmetics_12372.jpg: book 0.43 255 745 518 177
+lobelia4cosmetics_12372.jpg: person 0.31 591 476 174 458
+lobelia4cosmetics_12373.jpg: bottle 0.37 320 256 315 933
+lobelia4cosmetics_12374.jpg: No detections found
+lobelia4cosmetics_12375.jpg: bottle 0.47 626 265 319 936
+lobelia4cosmetics_12376.jpg: person 0.86 434 420 319 475
+lobelia4cosmetics_12377.jpg: clock 0.65 294 178 589 583
+lobelia4cosmetics_12378.jpg: person 0.85 388 565 413 507
+lobelia4cosmetics_12379.jpg: No detections found
+lobelia4cosmetics_12380.jpg: No detections found
+lobelia4cosmetics_12381.jpg: bowl 0.67 237 583 497 382
+lobelia4cosmetics_12382.jpg: No detections found
+lobelia4cosmetics_12383.jpg: No detections found
+lobelia4cosmetics_12384.jpg: No detections found
+lobelia4cosmetics_12385.jpg: No detections found
+lobelia4cosmetics_12386.jpg: No detections found
+lobelia4cosmetics_12387.jpg: No detections found
+lobelia4cosmetics_12388.jpg: bottle 0.50 647 319 312 912
+lobelia4cosmetics_12388.jpg: bottle 0.40 445 308 187 889
+lobelia4cosmetics_12389.jpg: No detections found
+lobelia4cosmetics_12390.jpg: No detections found
+lobelia4cosmetics_12391.jpg: No detections found
+lobelia4cosmetics_12392.jpg: No detections found
+lobelia4cosmetics_12393.jpg: No detections found
+lobelia4cosmetics_12394.jpg: No detections found
+lobelia4cosmetics_12395.jpg: No detections found
+lobelia4cosmetics_12396.jpg: No detections found
+lobelia4cosmetics_12397.jpg: No detections found
+lobelia4cosmetics_12398.jpg: bottle 0.56 458 127 222 618
+lobelia4cosmetics_12398.jpg: bottle 0.39 178 238 194 483
+lobelia4cosmetics_12399.jpg: No detections found
+lobelia4cosmetics_12400.jpg: No detections found
+lobelia4cosmetics_12401.jpg: No detections found
+lobelia4cosmetics_12402.jpg: No detections found
+lobelia4cosmetics_12403.jpg: No detections found
+lobelia4cosmetics_12404.jpg: No detections found
+lobelia4cosmetics_12405.jpg: No detections found
+lobelia4cosmetics_12406.jpg: No detections found
+lobelia4cosmetics_12407.jpg: No detections found
+lobelia4cosmetics_12408.jpg: No detections found
+lobelia4cosmetics_12409.jpg: No detections found
+lobelia4cosmetics_12410.jpg: No detections found
+lobelia4cosmetics_12411.jpg: No detections found
+lobelia4cosmetics_12412.jpg: No detections found
+lobelia4cosmetics_12413.jpg: No detections found
+lobelia4cosmetics_12414.jpg: No detections found
+lobelia4cosmetics_12415.jpg: person 0.55 314 256 202 324
+lobelia4cosmetics_12416.jpg: No detections found
+lobelia4cosmetics_12417.jpg: No detections found
+lobelia4cosmetics_12418.jpg: No detections found
+lobelia4cosmetics_12419.jpg: No detections found
+lobelia4cosmetics_12420.jpg: No detections found
+lobelia4cosmetics_12421.jpg: No detections found
+lobelia4cosmetics_12422.jpg: No detections found
+lobelia4cosmetics_12423.jpg: No detections found
+lobelia4cosmetics_12424.jpg: No detections found
+lobelia4cosmetics_12425.jpg: No detections found
+lobelia4cosmetics_12426.jpg: No detections found
+lobelia4cosmetics_12427.jpg: No detections found
+lobelia4cosmetics_12428.jpg: No detections found
+lobelia4cosmetics_12429.jpg: bottle 0.54 241 69 328 459
+lobelia4cosmetics_12430.jpg: cup 0.30 811 574 175 347
+lobelia4cosmetics_12431.jpg: No detections found
+lobelia4cosmetics_12432.jpg: No detections found
+lobelia4cosmetics_12433.jpg: cup 0.30 6 230 297 562
+lobelia4cosmetics_12434.jpg: No detections found
+lobelia4cosmetics_12435.jpg: parking meter 0.62 295 133 674 1009
+lobelia4cosmetics_12436.jpg: No detections found
+lobelia4cosmetics_12437.jpg: bottle 0.58 353 90 322 835
+lobelia4cosmetics_12438.jpg: bottle 0.31 350 0 480 1189
+lobelia4cosmetics_12439.jpg: bowl 0.67 237 583 497 382
+lobelia4cosmetics_12440.jpg: vase 0.25 170 42 162 450
+lobelia4cosmetics_12441.jpg: No detections found
+lobelia4cosmetics_12442.jpg: No detections found
+lobelia4cosmetics_12443.jpg: No detections found
+lobelia4cosmetics_12444.jpg: No detections found
+lobelia4cosmetics_12445.jpg: bowl 0.48 146 518 516 443
+lobelia4cosmetics_12446.jpg: No detections found
+lobelia4cosmetics_12447.jpg: book 0.65 252 916 525 103
+lobelia4cosmetics_12447.jpg: book 0.43 255 745 518 177
+lobelia4cosmetics_12447.jpg: person 0.31 591 476 174 458
+lobelia4cosmetics_12448.jpg: person 0.86 434 420 319 475
+lobelia4cosmetics_12449.jpg: No detections found
+lobelia4cosmetics_12450.jpg: No detections found
+yetenaweg_1077.jpg: No detections found
+yetenaweg_1078.jpg: No detections found
+yetenaweg_1079.jpg: No detections found
+yetenaweg_1081.jpg: person 0.89 62 317 63 224
+yetenaweg_1081.jpg: chair 0.85 142 411 81 135
+yetenaweg_1081.jpg: chair 0.83 196 421 93 133
+yetenaweg_1081.jpg: chair 0.76 375 420 67 123
+yetenaweg_1081.jpg: person 0.74 311 362 73 148
+yetenaweg_1081.jpg: person 0.74 560 320 62 95
+yetenaweg_1081.jpg: person 0.61 0 311 25 249
+yetenaweg_1081.jpg: chair 0.38 309 411 115 130
+yetenaweg_1081.jpg: laptop 0.28 310 393 34 32
+yetenaweg_1082.jpg: No detections found
+yetenaweg_1084.jpg: frisbee 0.25 450 303 79 51
+yetenaweg_1085.jpg: frisbee 0.29 378 392 147 146
+yetenaweg_1086.jpg: No detections found
+yetenaweg_1087.jpg: No detections found
+yetenaweg_1091.jpg: person 0.42 159 4 797 803
+yetenaweg_1092.jpg: clock 0.46 38 558 509 490
+yetenaweg_1093.jpg: clock 0.60 45 545 506 497
+yetenaweg_1094.jpg: kite 0.57 225 126 501 594
+yetenaweg_1095.jpg: No detections found
+yetenaweg_1096.jpg: No detections found
+yetenaweg_1097.jpg: No detections found
+yetenaweg_1098.jpg: No detections found
+yetenaweg_1103.jpg: No detections found
+yetenaweg_1104.jpg: No detections found
+yetenaweg_1108.jpg: cake 0.27 123 160 889 681
+yetenaweg_1111.jpg: No detections found
+yetenaweg_1112.jpg: No detections found
+yetenaweg_1114.jpg: No detections found
+yetenaweg_1115.jpg: tie 0.25 403 239 371 800
+yetenaweg_1117.jpg: No detections found
+yetenaweg_1120.jpg: No detections found
+yetenaweg_1121.jpg: No detections found
+yetenaweg_1125.jpg: No detections found
+yetenaweg_1127.jpg: kite 0.45 888 708 189 187
+yetenaweg_1128.jpg: No detections found
+yetenaweg_1133.jpg: clock 0.53 47 16 107 103
+yetenaweg_1134.jpg: book 0.43 6 0 747 1175
+yetenaweg_1134.jpg: person 0.34 643 911 76 215
+yetenaweg_1134.jpg: person 0.33 391 911 40 178
+yetenaweg_1134.jpg: person 0.30 407 922 214 216
+yetenaweg_1135.jpg: No detections found
+yetenaweg_1136.jpg: No detections found
+yetenaweg_1137.jpg: No detections found
+yetenaweg_1138.jpg: bird 0.25 880 561 208 207
+yetenaweg_1139.jpg: No detections found
+yetenaweg_1140.jpg: No detections found
+yetenaweg_1141.jpg: No detections found
+yetenaweg_1142.jpg: No detections found
+yetenaweg_1145.jpg: No detections found
+yetenaweg_1146.jpg: bird 0.27 690 848 255 236
+yetenaweg_1146.jpg: bird 0.26 880 561 209 207
+yetenaweg_1147.jpg: No detections found
+yetenaweg_1148.jpg: No detections found
+yetenaweg_1149.jpg: No detections found
+yetenaweg_1150.jpg: No detections found
+yetenaweg_1151.jpg: No detections found
+yetenaweg_1152.jpg: No detections found
+yetenaweg_1153.jpg: No detections found
+yetenaweg_1154.jpg: No detections found
+yetenaweg_1155.jpg: No detections found
+yetenaweg_1156.jpg: person 0.89 62 317 63 224
+yetenaweg_1156.jpg: chair 0.85 142 411 81 135
+yetenaweg_1156.jpg: chair 0.83 196 421 93 133
+yetenaweg_1156.jpg: chair 0.76 375 420 67 123
+yetenaweg_1156.jpg: person 0.74 311 362 73 148
+yetenaweg_1156.jpg: person 0.74 560 320 62 95
+yetenaweg_1156.jpg: person 0.61 0 311 25 249
+yetenaweg_1156.jpg: chair 0.38 309 411 115 130
+yetenaweg_1156.jpg: laptop 0.28 310 393 34 32
+yetenaweg_1157.jpg: No detections found
+yetenaweg_1158.jpg: No detections found
+yetenaweg_1159.jpg: suitcase 0.83 468 169 249 310
+yetenaweg_1159.jpg: book 0.28 158 374 287 75
+yetenaweg_1160.jpg: kite 0.39 220 812 139 92
+yetenaweg_1164.jpg: No detections found
+yetenaweg_1165.jpg: No detections found
+yetenaweg_1166.jpg: No detections found
+yetenaweg_1167.jpg: No detections found
+yetenaweg_1168.jpg: No detections found
+yetenaweg_1169.jpg: toilet 0.27 856 623 221 412
+yetenaweg_1171.jpg: No detections found
+yetenaweg_1172.jpg: No detections found
+yetenaweg_1175.jpg: umbrella 0.34 382 910 614 170
+yetenaweg_1176.jpg: No detections found
+yetenaweg_1177.jpg: person 0.65 76 676 62 84
+yetenaweg_1177.jpg: person 0.47 92 802 19 35
+yetenaweg_1177.jpg: person 0.47 98 539 36 81
+yetenaweg_1177.jpg: bird 0.42 80 1019 18 17
+yetenaweg_1178.jpg: kite 0.30 607 397 469 672
